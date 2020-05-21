@@ -30,7 +30,7 @@
       <div>
         <h2>Profiles</h2>
         
-        <a href="<?php echo url_for('/staff/profiles/new.php?department_id=' . h(u($department['id']))); ?>">Create New Employee Profile</a>
+        <a href="<?php echo url_for('/staff/profiles/new.php?department_id=' . h(u($department['id']))); ?>">Create New Employee Profile</a><br /><br />
         
         <table>
           <tr>
