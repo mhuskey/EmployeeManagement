@@ -33,7 +33,7 @@
 
     <div id="main">
       <h1>Create Employee Department</h1>
-      <a class="back-link" href="<?php echo url_for('/staff/departments/index.php'); ?>">&laquo; Back to List</a>
+      <a class="back-link" href="<?php echo url_for('/staff/departments/index.php'); ?>">&laquo; Back to Employee Departments</a>
       
       <?php echo display_errors($errors); ?>
       

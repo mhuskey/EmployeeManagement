@@ -11,7 +11,7 @@
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
     <div id="main">
-      <a class="back-link" href="<?php echo url_for('/staff/departments/index.php'); ?>">&laquo; Back to List</a>
+      <a class="back-link" href="<?php echo url_for('/staff/departments/index.php'); ?>">&laquo; Back to Employee Departments</a>
       
       <h1>Department: <?php echo h($department['department_name']); ?></h1>
       
