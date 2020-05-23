@@ -27,7 +27,7 @@
         </tr>
         
         <?php while ($department = mysqli_fetch_assoc($department_set)) { ?>
-          <?php $employee_count = count_profiles_by_department_id($department['id']); ?>
+          <?php $employee_count = count_active_profiles_by_department_id($department['id']); ?>
           <tr>
             <td><?php echo h($department['id']); ?></td>
             <td><?php echo h($department['department_name']); ?></td>

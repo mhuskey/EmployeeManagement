@@ -368,11 +368,58 @@
     return $result;
   }
   
+  function find_active_profiles_by_department_id($department_id) {
+    global $db;
+    
+    $sql  = "SELECT * FROM profiles ";
+    $sql .= "WHERE department_id='" . db_escape($db, $department_id) . "' ";
+    $sql .= "AND status = 1 ";
+    $sql .= "ORDER BY employee_number";
+    
+    $result = mysqli_query($db, $sql);
+    confirm_result_set($result);
+    
+    return $result;
+  }
+  
+  function find_inactive_profiles_by_department_id($department_id) {
+    global $db;
+    
+    $sql  = "SELECT * FROM profiles ";
+    $sql .= "WHERE department_id='" . db_escape($db, $department_id) . "' ";
+    $sql .= "AND NOT status = 1 ";
+    $sql .= "ORDER BY employee_number";
+    
+    $result = mysqli_query($db, $sql);
+    confirm_result_set($result);
+    
+    return $result;
+  }
+  
   function count_profiles_by_department_id($department_id) {
     global $db;
     
     $sql  = "SELECT COUNT(id) FROM profiles ";
     $sql .= "WHERE department_id='" . db_escape($db, $department_id) . "' ";
+    $sql .= "ORDER BY employee_number ASC";
+    
+    $result = mysqli_query($db, $sql);
+    confirm_result_set($result);
+    
+    $row = mysqli_fetch_row($result);
+    mysqli_free_result($result);
+    
+    $count = $row[0];
+    
+    return $count;
+  }
+  
+  function count_active_profiles_by_department_id($department_id) {
+    global $db;
+    
+    $sql  = "SELECT COUNT(id) FROM profiles ";
+    $sql .= "WHERE department_id='" . db_escape($db, $department_id) . "' ";
+    $sql .= "AND status = 1 ";
     $sql .= "ORDER BY employee_number ASC";
     
     $result = mysqli_query($db, $sql);
