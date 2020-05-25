@@ -36,8 +36,8 @@
         <h3>Active Employees</h3>
         <table>
           <tr>
-            <th>Employee Number |</th>
-            <th>First Name |</th>
+            <th>Employee Number</th>
+            <th>First Name</th>
             <th>Last Name</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
@@ -60,8 +60,8 @@
           <h3>Inactive Employees</h3>
           <table>
             <tr>
-              <th>Employee Number |</th>
-              <th>First Name |</th>
+              <th>Employee Number</th>
+              <th>First Name</th>
               <th>Last Name</th>
               <th>&nbsp;</th>
               <th>&nbsp;</th>

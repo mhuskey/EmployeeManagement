@@ -14,7 +14,7 @@
     $result = insert_department($department);
     if($result === true) {
       $new_id = mysqli_insert_id($db);
-      $SESSION['message'] = 'The department was created successfully.';
+      $_SESSION['message'] = 'The department was created successfully.';
       redirect_to(url_for('/staff/departments/show.php?id=' . $new_id));
     } else {
       $errors = $result;

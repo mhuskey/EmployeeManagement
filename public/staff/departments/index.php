@@ -17,8 +17,8 @@
       
       <table class="list">
         <tr>
-          <th>Position | </th>
-          <th>Department Name | </th>
+          <th>Position</th>
+          <th>Department Name</th>
           <th>Employees</th>
           <th>&nbsp;</th>
           <th>&nbsp;</th>
