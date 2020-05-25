@@ -254,9 +254,9 @@
     global $db;
     
     $sql  = "SELECT * FROM profiles ";
-    $sql .= "WHERE ID='" . db_escape($db, $id) . "'";
+    $sql .= "WHERE id='" . db_escape($db, $id) . "'";
     
-    $result = mysqli_query($db, $id);
+    $result = mysqli_query($db, $sql);
     confirm_result_set($result);
     
     $profile = mysqli_fetch_assoc($result);
@@ -393,7 +393,20 @@
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
     
-    return $result;
+    // Check for inactive profiles
+    $row_count = mysqli_num_rows($result);
+    if($row_count == 0) {
+      $empty = true;
+    } else {
+      $empty = false;
+    }
+    
+    // If no inactive profiles, return `false`
+    if($empty) {
+      return false;
+    } else {
+      return $result;
+    }
   }
   
   function count_profiles_by_department_id($department_id) {

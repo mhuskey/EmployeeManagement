@@ -36,10 +36,9 @@
         <h3>Active Employees</h3>
         <table>
           <tr>
-            <th>ID</th>
-            <th>First Name</th>
+            <th>Employee Number |</th>
+            <th>First Name |</th>
             <th>Last Name</th>
-            <th>Employee Number</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
@@ -47,10 +46,9 @@
           
           <?php while ($profile = mysqli_fetch_assoc($active_profile_set)) { ?>
             <tr>
-              <td><?php echo h($profile['id']); ?></td>
+              <td><?php echo h($profile['employee_number']); ?></td>
               <td><?php echo h($profile['first_name']); ?></td>
               <td><?php echo h($profile['last_name']); ?></td>
-              <td><?php echo h($profile['employee_number']); ?></td>
               <td><a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>">View</a></td>
               <td><a href="<?php echo url_for('/staff/profiles/edit.php?id=' . h(u($profile['id']))); ?>">Edit</a></td>
               <td><a href="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>">Delete</a></td>
@@ -58,35 +56,36 @@
           <?php } ?>
         </table>
         
-        
-        <h3>Inactive Employees</h3>
-        <table>
-          <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Employee Number</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-          </tr>
-          
-          <?php while ($profile = mysqli_fetch_assoc($inactive_profile_set)) { ?>
+        <?php if($inactive_profile_set) { ?>
+          <h3>Inactive Employees</h3>
+          <table>
             <tr>
-              <td><?php echo h($profile['id']); ?></td>
-              <td><?php echo h($profile['first_name']); ?></td>
-              <td><?php echo h($profile['last_name']); ?></td>
-              <td><?php echo h($profile['employee_number']); ?></td>
-              <td><a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>">View</a></td>
-              <td><a href="<?php echo url_for('/staff/profiles/edit.php?id=' . h(u($profile['id']))); ?>">Edit</a></td>
-              <td><a href="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>">Delete</a></td>
+              <th>Employee Number |</th>
+              <th>First Name |</th>
+              <th>Last Name</th>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
             </tr>
-          <?php } ?>
-        </table>
+            
+            <?php while ($profile = mysqli_fetch_assoc($inactive_profile_set)) { ?>
+              <tr>
+                <td><?php echo h($profile['employee_number']); ?></td>
+                <td><?php echo h($profile['first_name']); ?></td>
+                <td><?php echo h($profile['last_name']); ?></td>
+                <td><a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>">View</a></td>
+                <td><a href="<?php echo url_for('/staff/profiles/edit.php?id=' . h(u($profile['id']))); ?>">Edit</a></td>
+                <td><a href="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>">Delete</a></td>
+              </tr>
+            <?php } ?>
+          </table>
+        <?php } ?>
         
         <?php
           mysqli_free_result($active_profile_set);
-          mysqli_free_result($inactive_profile_set);
+          if($inactive_profile_set) {
+            mysqli_free_result($inactive_profile_set);
+          }
         ?>
       </div>
     </div>

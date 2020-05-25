@@ -17,9 +17,8 @@
       
       <table class="list">
         <tr>
-          <th>ID</th>
-          <th>Department Name</th>
-          <th>Position</th>
+          <th>Position | </th>
+          <th>Department Name | </th>
           <th>Employees</th>
           <th>&nbsp;</th>
           <th>&nbsp;</th>
@@ -29,9 +28,8 @@
         <?php while ($department = mysqli_fetch_assoc($department_set)) { ?>
           <?php $employee_count = count_active_profiles_by_department_id($department['id']); ?>
           <tr>
-            <td><?php echo h($department['id']); ?></td>
-            <td><?php echo h($department['department_name']); ?></td>
             <td><?php echo h($department['position']); ?></td>
+            <td><?php echo h($department['department_name']); ?></td>
             <td><?php echo $employee_count; ?></td>
             <td><a class="action" href="<?php echo url_for('/staff/departments/show.php?id=' . h(u($department['id']))); ?>">View</a></td>
             <td><a class="action" href="<?php echo url_for('/staff/departments/edit.php?id=' . h(u($department['id']))); ?>">Edit</a></td>
