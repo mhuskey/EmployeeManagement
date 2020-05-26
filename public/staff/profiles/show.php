@@ -16,6 +16,11 @@
       <h1>Profile: <?php echo h($profile['first_name']) . ' ' . h($profile['last_name']); ?></h1>
       
       <dl>
+        <dt>Employee ID</dt>
+        <dd><?php echo $profile['id']; ?></dd>
+      </dl>
+      
+      <dl>
         <dt>First Name</dt>
         <dd><?php echo $profile['first_name']; ?></dd>
       </dl>
@@ -28,11 +33,6 @@
       <dl>
         <dt>Department</dt>
         <dd><?php echo $department['department_name']; ?></dd>
-      </dl>
-      
-      <dl>
-        <dt>Employee Number</dt>
-        <dd><?php echo $profile['employee_number']; ?></dd>
       </dl>
       
       <dl>

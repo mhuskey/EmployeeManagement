@@ -282,12 +282,11 @@
     // TODO: shift_profile_positions()
     
     $sql  = "INSERT INTO profiles ";
-    $sql .= "(department_id, first_name, last_name, employee_number, status) ";
+    $sql .= "(department_id, first_name, last_name, status) ";
     $sql .= "VALUES (";
     $sql .= "'" . db_escape($db, $profile['department_id'])   . "', ";
     $sql .= "'" . db_escape($db, $profile['first_name'])      . "', ";
     $sql .= "'" . db_escape($db, $profile['last_name'])       . "', ";
-    $sql .= "'" . db_escape($db, $profile['employee_number']) . "', ";
     $sql .= "'" . db_escape($db, $profile['status'])          . "'";
     $sql .= ")";
     
@@ -317,7 +316,6 @@
     $sql .= "department_id='"   . db_escape($db, $profile['department_id'])   . "', ";
     $sql .= "first_name='"      . db_escape($db, $profile['first_name'])      . "', ";
     $sql .= "last_name='"       . db_escape($db, $profile['last_name'])       . "', ";
-    $sql .= "employee_number='" . db_escape($db, $profile['employee_number']) . "', ";
     $sql .= "status='"          . db_escape($db, $profile['status'])          . "' ";
     $sql .= "WHERE id='"        . db_escape($db, $profile['id'])              . "' ";
     $sql .= "LIMIT 1";
@@ -360,7 +358,7 @@
     
     $sql  = "SELECT * FROM profiles ";
     $sql .= "WHERE department_id='" . db_escape($db, $department_id) . "' ";
-    $sql .= "ORDER BY employee_number";
+    $sql .= "ORDER BY id";
     
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
@@ -374,7 +372,7 @@
     $sql  = "SELECT * FROM profiles ";
     $sql .= "WHERE department_id='" . db_escape($db, $department_id) . "' ";
     $sql .= "AND status = 1 ";
-    $sql .= "ORDER BY employee_number";
+    $sql .= "ORDER BY id";
     
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
@@ -388,7 +386,7 @@
     $sql  = "SELECT * FROM profiles ";
     $sql .= "WHERE department_id='" . db_escape($db, $department_id) . "' ";
     $sql .= "AND NOT status = 1 ";
-    $sql .= "ORDER BY employee_number";
+    $sql .= "ORDER BY id";
     
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
@@ -414,7 +412,7 @@
     
     $sql  = "SELECT COUNT(id) FROM profiles ";
     $sql .= "WHERE department_id='" . db_escape($db, $department_id) . "' ";
-    $sql .= "ORDER BY employee_number ASC";
+    $sql .= "ORDER BY id ASC";
     
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
@@ -433,7 +431,7 @@
     $sql  = "SELECT COUNT(id) FROM profiles ";
     $sql .= "WHERE department_id='" . db_escape($db, $department_id) . "' ";
     $sql .= "AND status = 1 ";
-    $sql .= "ORDER BY employee_number ASC";
+    $sql .= "ORDER BY id ASC";
     
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
