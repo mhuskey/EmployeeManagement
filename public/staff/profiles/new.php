@@ -78,13 +78,13 @@
                     echo " selected";
                   }
                   if($i == 1) {
-                    echo ">{$i} - Active</option>";
+                    echo ">Active</option>";
                   } elseif($i == 2) {
-                    echo ">{$i} - Resigned</option>";
+                    echo ">Resigned</option>";
                   } elseif($i == 3) {
-                    echo ">{$i} - Terminated</option>";
+                    echo ">Terminated</option>";
                   } elseif($i == 4) {
-                    echo ">{$i} - Leave of Absence</option>";
+                    echo ">Leave of Absence</option>";
                   }
                 }
               ?>

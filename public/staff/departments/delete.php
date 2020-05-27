@@ -28,7 +28,7 @@
       <p><?php echo h($department['department_name']); ?></p>
       
       <form action="<?php echo url_for('/staff/departments/delete.php?id=' . h(u($department['id']))); ?>" method="post">
-        <input type="submit" value="Delete Department" />
+        <input type="submit" name="commit" value="Delete Department" />
       </form>
     </div>
 

@@ -1,5 +1,5 @@
 <?php
   require_once('../../../private/initialize.php');
   
-  rediret_to(url_for('/staff/index.php'));
+  redirect_to(url_for('/staff/index.php'));
 ?>
