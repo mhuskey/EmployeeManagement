@@ -31,9 +31,9 @@
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
     <div id="main">
-      <a class="back-link" href="<?php echo url_for('/staff/departments/show.php?id=' . h(u($profile['department_id']))); ?>">&laquo; Back to Employee Departments</a>
+      <a class="back-link" href="<?php echo url_for('/staff/departments/show.php?id=' . h(u($profile['department_id']))); ?>">&laquo; Back to Employee Profiles</a>
       
-      <h1>Create Employee Department</h1>
+      <h1>Create Employee Profile</h1>
       
       <?php echo display_errors($errors); ?>
       
@@ -68,7 +68,7 @@
         </dl>
         
         <dl>
-          <dt>Status</dt>
+          <dt>Employment Status</dt>
           <dd>
             <select name="status">
               <?php
