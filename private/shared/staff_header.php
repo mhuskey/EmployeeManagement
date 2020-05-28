@@ -17,7 +17,7 @@
   
   <body>
     <header>
-      <h1>Employee Management Area</h1>
+      <h1>Employee Management Staff Area</h1>
     </header>
     
     <?php echo display_session_message(); ?>

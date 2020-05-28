@@ -9,7 +9,8 @@
 
     <div id="main">
       <h1>Admins</h1>
-      <br />
+      <a class="back-link" href="<?php echo url_for('/staff/index.php'); ?>">&laquo; Back to Staff Area</a><br /><br />
+      
       <a href="<?php echo url_for('/staff/admins/new.php'); ?>">Create New Admin</a>
       
       <table>
@@ -31,8 +32,8 @@
             <td><?php echo h($admin['last_name']); ?></td>
             <td><?php echo h($admin['email']); ?></td>
             <td><?php echo h($admin['username']); ?></td>
-            <td><a href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin['id']))); ?>"></a>View</td>
-            <td><a href="<?php echo url_for('/staff/admins/edit.php?' . h(u($admin['id']))); ?>"></a>Edit</td>
+            <td><a href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin['id']))); ?>">View</a></td>
+            <td><a href="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($admin['id']))); ?>">Edit</a></td>
             <td><a href="<?php echo url_for('/staff/admins/delete.php?' . h(u($admin['id']))); ?>">Delete</a></td>
           </tr>
         <?php } ?>
@@ -43,3 +44,4 @@
       ?>
     </div>
 
+<?php include(SHARED_PATH . '/staff_footer.php'); ?>

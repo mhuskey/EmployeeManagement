@@ -14,6 +14,22 @@
     return $result;
   }
   
+  function find_admin_by_id($id) {
+    global $db;
+    
+    $sql  = "SELECT * FROM admins ";
+    $sql .= "WHERE id='" . db_escape($db, $id) . "' ";
+    $sql .= "LIMIT 1";
+    
+    $result = mysqli_query($db, $sql);
+    confirm_result_set($result);
+    
+    $admin = mysqli_fetch_assoc($result);
+    
+    // returns an associative array
+    return $admin;
+  }
+  
   function find_admin_by_username($username) {
     global $db;
     
@@ -26,7 +42,6 @@
     
     $admin = mysqli_fetch_assoc($result);
     
-    // returns an associative array
     return $admin;
   }
   
@@ -70,9 +85,9 @@
   function update_admin($admin) {
     global $db;
     
-    $password_sent = !is_blank($admin['password']);
+    // $password_sent = !is_blank($admin['password']);
     
-    $errors = validate_admin($admin, ['password_required' => $password_sent]);
+    // $errors = validate_admin($admin, ['password_required' => $password_sent]);
     if(!empty($errors)) {
       return $errors;
     }
@@ -83,9 +98,7 @@
     $sql .= "first_name='" . db_escape($db, $admin['first_name']) . "', ";
     $sql .= "last_name='"  . db_escape($db, $admin['last_name'])  . "', ";
     $sql .= "email='"      . db_escape($db, $admin['email'])      . "', ";
-    if($password_sent) {
-      $sql .= "hashed_password='" . db_escape($db, $hashed_password) . "', ";
-    }
+    $sql .= "hashed_password='" . db_escape($db, $admin['password']) . "', ";
     $sql .= "username='"   . db_escape($db, $admin['username'])   . "' ";
     $sql .= "WHERE id='"   . db_escape($db, $admin['id'])         . "' ";
     $sql .= "LIMIT 1";

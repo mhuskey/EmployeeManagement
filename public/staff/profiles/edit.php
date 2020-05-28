@@ -7,7 +7,7 @@
   $id = $_GET['id'];
   
   if(is_post_request()) {
-    $profile = [];
+    $profile                  = [];
     $profile['department_id'] = $_POST['department_id'] ?? '';
     $profile['first_name']    = $_POST['first_name']    ?? '';
     $profile['last_name']     = $_POST['last_name']     ?? '';

@@ -9,7 +9,7 @@
 
     <div id="main">
       <h1>Employee Departments</h1>
-      <a class="back-link" href="<?php echo url_for('/index.php'); ?>">&laquo; Back to Employee Management Index</a><br /><br />
+      <a class="back-link" href="<?php echo url_for('/staff/index.php'); ?>">&laquo; Back to Staff Area</a><br /><br />
       
       <div class="actions">
         <a class="action" href="<?php echo url_for('/staff/departments/new.php'); ?>">Create New Department</a>

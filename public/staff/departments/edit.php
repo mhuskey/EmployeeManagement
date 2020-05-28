@@ -7,7 +7,7 @@
   $id = $_GET['id'];
   
   if(is_post_request()) {
-    $department = [];
+    $department                    = [];
     $department['id']              = $id;
     $department['department_name'] = $_POST['department_name'] ?? '';
     $department['position']        = $_POST['position']        ?? '';

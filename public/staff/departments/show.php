@@ -89,3 +89,5 @@
         ?>
       </div>
     </div>
+
+<?php include(SHARED_PATH . '/staff_footer.php'); ?>
