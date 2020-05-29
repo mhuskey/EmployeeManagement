@@ -25,6 +25,7 @@
     confirm_result_set($result);
     
     $admin = mysqli_fetch_assoc($result);
+    mysqli_free_result($result);
     
     // returns an associative array
     return $admin;
@@ -41,6 +42,7 @@
     confirm_result_set($result);
     
     $admin = mysqli_fetch_assoc($result);
+    mysqli_free_result($result);
     
     return $admin;
   }
@@ -67,7 +69,7 @@
     $sql .= "'" . db_escape($db, $admin['last_name'])  . "',";
     $sql .= "'" . db_escape($db, $admin['email'])      . "',";
     $sql .= "'" . db_escape($db, $admin['username'])   . "',";
-    $sql .= "'" . db_escape($db, $hashed_password)     .  "'";
+    $sql .= "'" . db_escape($db, $admin['password']) . "'";
     $sql .= ")";
     
     $result = mysqli_query($db, $sql);
@@ -115,11 +117,11 @@
     }
   }
   
-  function delete_admin($admin) {
+  function delete_admin($id) {
     global $db;
     
     $sql  = "DELETE FROM admins ";
-    $sql .= "WHERE id='" . db_escape($db, $admin['id']) . "' ";
+    $sql .= "WHERE id='" . db_escape($db, $id) . "' ";
     $sql .= "LIMIT 1";
     
     $result = mysqli_query($db, $sql);
