@@ -1,6 +1,8 @@
 <?php
   require_once('../../../private/initialize.php');
   
+  require_login();
+  
   $id = $_GET['id'];
   
   $admin = find_admin_by_id($id);

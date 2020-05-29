@@ -1,6 +1,8 @@
 <?php
   require_once('../../../private/initialize.php');
   
+  require_login();
+  
   $department_set   = find_all_departments();
   $department_count = mysqli_num_rows($department_set) + 1;
   

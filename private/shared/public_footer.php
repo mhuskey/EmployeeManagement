@@ -1,5 +1,5 @@
     <footer>
-      &copy; <?php echo date('Y'); ?> Employee Management
+      &copy; <?php echo date('Y'); ?> Matthew Huskey
     </footer>
   </body>
 </html>

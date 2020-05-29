@@ -1,6 +1,8 @@
 <?php
   require_once('../../../private/initialize.php');
   
+  require_login();
+  
   $id = $_GET['id'] ?? '1';
   
   $profile    = find_profile_by_id($id);

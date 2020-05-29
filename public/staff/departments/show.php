@@ -1,6 +1,8 @@
 <?php
   require_once('../../../private/initialize.php');
   
+  require_login();
+  
   $id = $_GET['id'] ?? '1';
   
   $department  = find_department_by_id($id);

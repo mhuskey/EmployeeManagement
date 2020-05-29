@@ -1,19 +1,22 @@
 <?php
   require_once('../../../private/initialize.php');
   
+  require_login();
+  
   if(!isset($_GET['id'])) {
     redirect_to(url_for('/staff/admins/index.php'));
   }
   $id = $_GET['id'];
   
   if(is_post_request()) {
-    $admin                    = [];
-    $admin['id']              = $id;
-    $admin['first_name']      = $_POST['first_name'] ?? '';
-    $admin['last_name']       = $_POST['last_name']  ?? '';
-    $admin['email']           = $_POST['email']      ?? '';
-    $admin['username']        = $_POST['username']   ?? '';
-    $admin['hashed_password'] = $_POST['password']   ?? '';
+    $admin                     = [];
+    $admin['id']               = $id;
+    $admin['first_name']       = $_POST['first_name']         ?? '';
+    $admin['last_name']        = $_POST['last_name']          ?? '';
+    $admin['email']            = $_POST['email']              ?? '';
+    $admin['username']         = $_POST['username']           ?? '';
+    $admin['password']         = $_POST['password']           ?? '';
+    $admin['confirm_password'] = $_POST['confirm_password']   ?? '';
     
     $result = update_admin($admin);
     if($result) {
@@ -77,3 +80,4 @@
       </form>
     </div>
 
+<?php include(SHARED_PATH . '/staff_footer.php') ?>
