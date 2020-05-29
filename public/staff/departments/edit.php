@@ -15,7 +15,7 @@
     $result = update_department($department);
     if($result === true) {
       $_SESSION['message'] = 'The department was updated successfully.';
-      redirect_to(url_for('/staff/departments/show.php?id=' . $id));
+      redirect_to(url_for('/staff/departments/index.php'));
     } else {
       $errors = $result;
     }
