@@ -7,18 +7,18 @@
   $id = $_GET['id'];
   
   if(is_post_request()) {
-    $admin                     = [];
-    $admin['first_name']       = $_POST['first_name'] ?? '';
-    $admin['last_name']        = $_POST['last_name']  ?? '';
-    $admin['email']            = $_POST['email']      ?? '';
-    $admin['username']         = $_POST['username']   ?? '';
-    $admin['password']         = $_POST['password'] ?? '';
-    $admin['confirm_password'] = $_POST['confirm_password'] ?? '';
+    $admin                    = [];
+    $admin['id']              = $id;
+    $admin['first_name']      = $_POST['first_name'] ?? '';
+    $admin['last_name']       = $_POST['last_name']  ?? '';
+    $admin['email']           = $_POST['email']      ?? '';
+    $admin['username']        = $_POST['username']   ?? '';
+    $admin['hashed_password'] = $_POST['password']   ?? '';
     
     $result = update_admin($admin);
     if($result) {
       $_SESSION['message'] = 'The admin was updated succesfully';
-      redirect_to(url_for('/staff/admins/show.php/id=' . $id));
+      redirect_to(url_for('/staff/admins/show.php?id=' . $id));
     } else {
       $errors = $result;
     }

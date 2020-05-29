@@ -95,12 +95,12 @@
     // TODO: password_hash()
     
     $sql  = "UPDATE admins SET ";
-    $sql .= "first_name='" . db_escape($db, $admin['first_name']) . "', ";
-    $sql .= "last_name='"  . db_escape($db, $admin['last_name'])  . "', ";
-    $sql .= "email='"      . db_escape($db, $admin['email'])      . "', ";
-    $sql .= "hashed_password='" . db_escape($db, $admin['password']) . "', ";
-    $sql .= "username='"   . db_escape($db, $admin['username'])   . "' ";
-    $sql .= "WHERE id='"   . db_escape($db, $admin['id'])         . "' ";
+    $sql .= "first_name='"      . db_escape($db, $admin['first_name']) . "', ";
+    $sql .= "last_name='"       . db_escape($db, $admin['last_name'])  . "', ";
+    $sql .= "email='"           . db_escape($db, $admin['email'])      . "', ";
+    $sql .= "hashed_password='" . db_escape($db, $admin['hashed_password']) . "', ";
+    $sql .= "username='"        . db_escape($db, $admin['username'])   . "' ";
+    $sql .= "WHERE id='"        . db_escape($db, $admin['id'])         . "' ";
     $sql .= "LIMIT 1";
     
     $result = mysqli_query($db, $sql);
