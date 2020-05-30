@@ -47,19 +47,21 @@
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
-  <h1>Log in</h1>
+  <h1>Log In</h1>
   
   <?php echo display_errors($errors); ?>
   
   <form action="login.php" method="post">
     Username:<br />
-    <input type="text" name="username" value="<?php echo h($username); ?>" /><br />
+    <input type="text" name="username" value="<?php echo h($username); ?>" autofocus /><br /><br />
     
     Password:<br />
-    <input type="password" name="password" value="" /><br />
+    <input type="password" name="password" value="" /><br /><br />
     
-    <input type="submit" name="submit" value="Submit" />
+    <input type="submit" name="submit" value="Submit" /><br /><br />
   </form>
+  
+  <p>Not a member? <a href="<?php echo url_for('/staff/signup.php'); ?>">Sign up here</a>.</p>
 </div>
 
 <?php include(SHARED_PATH . '/staff_footer.php'); ?>

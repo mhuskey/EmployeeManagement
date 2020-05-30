@@ -1,7 +1,5 @@
 <?php
-  require_once('../../../private/initialize.php');
-  
-  require_login();
+  require_once('../../private/initialize.php');
   
   if(is_post_request()) {
     $admin = [];
@@ -11,12 +9,16 @@
     $admin['username']         = $_POST['username'] ?? '';
     $admin['password']         = $_POST['password'] ?? '';
     $admin['confirm_password'] = $_POST['confirm_password'] ?? '';
+    
+    // Log out in case alreay logged in
+    log_out_admin();
   
     $result = insert_admin($admin);
     if($result === true) {
-      $new_id = mysqli_insert_id($db);
-      $_SESSION['message'] = 'The admin was created successfully.';
-      redirect_to(url_for('/staff/admins/show.php?id=' . $new_id));
+      $admin['id'] = mysqli_insert_id($db);
+      log_in_admin($admin);
+      $_SESSION['message'] = 'Sign up successful.';
+      redirect_to(url_for('/staff/index.php'));
     } else {
       $errors = $result;
     }
@@ -33,17 +35,15 @@
   }
 ?>
 
-<?php $page_title = 'Create Admin'; ?>
-<?php include(SHARED_PATH . '/staff_header.php'); ?>
+<?php $page_title = 'Sign Up'; ?>
+<?php include(SHARED_PATH . '/public_header.php'); ?>
 
     <div id="main">
-      <a href="<?php echo url_for('/staff/admins/index.php'); ?>">&laquo; Back to Admins</a>
-      
-      <h1>Create Admin</h1>
+      <h1>Sign Up</h1>
       
       <?php echo display_errors($errors); ?>
       
-      <form action="<?php echo url_for('/staff/admins/new.php'); ?>" method="post">
+      <form action="<?php echo url_for('/staff/signup.php'); ?>" method="post">
         <dl>
           <dt>First Name</dt>
           <dd><input type="text" name="first_name" value="<?php echo h($admin['first_name']); ?>" autofocus /></dd>
@@ -79,6 +79,6 @@
         </p>
         <br />
         
-        <input type="submit" name="Create Admin" />
+        <input type="submit" name="Sign Up" />
       </form>
     </div>

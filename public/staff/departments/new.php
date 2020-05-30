@@ -43,7 +43,7 @@
       <form action="<?php echo url_for('/staff/departments/new.php') ?>" method="post">
         <dl>
           <dt>Menu Name</dt>
-          <dd><input type="text" name="department_name" value="" /></dd>
+          <dd><input type="text" name="department_name" value="" autofocus /></dd>
         </dl>
         
         <dl>

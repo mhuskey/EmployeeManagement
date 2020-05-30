@@ -42,7 +42,7 @@
       <form action="<?php echo url_for('/staff/profiles/new.php'); ?>" method="post">
         <dl>
           <dt>First Name</dt>
-          <dd><input type="text" name="first_name" value="<?php echo h($profile['first_name']); ?>" /></dd>
+          <dd><input type="text" name="first_name" value="<?php echo h($profile['first_name']); ?>" autofocus /></dd>
         </dl>
         
         <dl>
