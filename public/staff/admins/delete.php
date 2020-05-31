@@ -21,7 +21,6 @@
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
     <div id="main">
-      <a class="back-link" href="<?php echo url_for('/staff/admins/index.php'); ?>">&laquo; Back to Admins</a>
       
       <h1>Delete Admin</h1>
       

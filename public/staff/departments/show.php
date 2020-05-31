@@ -14,8 +14,6 @@
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
     <div id="main">
-      <a class="back-link" href="<?php echo url_for('/staff/departments/index.php'); ?>">&laquo; Back to Employee Departments</a>
-      
       <h1>Department: <?php echo h($department['department_name']); ?></h1>
       
       <dl>
@@ -36,50 +34,60 @@
         <a href="<?php echo url_for('/staff/profiles/new.php?department_id=' . h(u($department['id']))); ?>">Create New Employee Profile</a><br /><br />
         
         <h3>Active Employees</h3>
-        <table>
-          <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-          </tr>
-          
-          <?php while ($profile = mysqli_fetch_assoc($active_profile_set)) { ?>
+        
+        <table class="table table-striped table-bordered table-hover">
+          <thead class="thead-dark">
             <tr>
-              <td><?php echo h($profile['id']); ?></td>
-              <td><?php echo h($profile['first_name']); ?></td>
-              <td><?php echo h($profile['last_name']); ?></td>
-              <td><a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>">View</a></td>
-              <td><a href="<?php echo url_for('/staff/profiles/edit.php?id=' . h(u($profile['id']))); ?>">Edit</a></td>
-              <td><a href="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>">Delete</a></td>
+              <th class="text-center">ID</th>
+              <th class="text-center">First Name</th>
+              <th class="text-center">Last Name</th>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
             </tr>
-          <?php } ?>
+          </thead>
+          
+          <tbody>
+            <?php while ($profile = mysqli_fetch_assoc($active_profile_set)) { ?>
+              <tr>
+                <td class="text-center"><?php echo h($profile['id']); ?></td>
+                <td class="text-center"><?php echo h($profile['first_name']); ?></td>
+                <td class="text-center"><?php echo h($profile['last_name']); ?></td>
+                <td class="text-center"><a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>">View</a></td>
+                <td class="text-center"><a href="<?php echo url_for('/staff/profiles/edit.php?id=' . h(u($profile['id']))); ?>">Edit</a></td>
+                <td class="text-center"><a href="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>">Delete</a></td>
+              </tr>
+            <?php } ?>
+          </tbody>
         </table>
         
         <?php if($inactive_profile_set) { ?>
           <h3>Inactive Employees</h3>
-          <table>
-            <tr>
-              <th>ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>&nbsp;</th>
-              <th>&nbsp;</th>
-              <th>&nbsp;</th>
-            </tr>
-            
-            <?php while ($profile = mysqli_fetch_assoc($inactive_profile_set)) { ?>
+          
+          <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-dark">
               <tr>
-                <td><?php echo h($profile['id']); ?></td>
-                <td><?php echo h($profile['first_name']); ?></td>
-                <td><?php echo h($profile['last_name']); ?></td>
-                <td><a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>">View</a></td>
-                <td><a href="<?php echo url_for('/staff/profiles/edit.php?id=' . h(u($profile['id']))); ?>">Edit</a></td>
-                <td><a href="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>">Delete</a></td>
+                <th class="text-center">ID</th>
+                <th class="text-center">First Name</th>
+                <th class="text-center">Last Name</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
               </tr>
-            <?php } ?>
+            </thead>
+            
+            <tbody>
+              <?php while ($profile = mysqli_fetch_assoc($inactive_profile_set)) { ?>
+                <tr>
+                  <td class="text-center"><?php echo h($profile['id']); ?></td>
+                  <td class="text-center"><?php echo h($profile['first_name']); ?></td>
+                  <td class="text-center"><?php echo h($profile['last_name']); ?></td>
+                  <td class="text-center"><a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>">View</a></td>
+                  <td class="text-center"><a href="<?php echo url_for('/staff/profiles/edit.php?id=' . h(u($profile['id']))); ?>">Edit</a></td>
+                  <td class="text-center"><a href="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>">Delete</a></td>
+                </tr>
+              <?php } ?>
+            </tbody>
           </table>
         <?php } ?>
         

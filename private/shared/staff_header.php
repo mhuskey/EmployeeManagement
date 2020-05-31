@@ -10,28 +10,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>Employee Management - <?php echo $page_title ?></title>
+    <title>Employee Management <?php if(isset($page_title)) { echo '- ' . h($page_title); } ?></title>
     
-    <link rel="stylesheet" type="text/css" href="<?php echo url_for('/assets/stylesheets/staff.css'); ?>">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/44ea90186f.js" crossorigin="anonymous"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" media="all" href="<?php echo url_for('/assets/stylesheets/main.css'); ?>" />
   </head>
   
   <body>
-    <header>
-      <h1>Employee Management Staff Area</h1>
-    </header>
-    
-    <nav>
-      <ul>
-        <li>User: <?php echo $_SESSION['username'] ?? ''; ?></li>
-        
-        <li><a href="<?php echo url_for('/staff/index.php'); ?>">Menu</a></li>
-        
-        <?php if(is_logged_in()) { ?>
-          <li><a href="<?php echo url_for('/staff/logout.php'); ?>">Logout</a></li>
-        <?php } else { ?>
-          <li><a href="<?php echo url_for('/staff/login.php'); ?>">Login</a></li>
-        <?php } ?>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="<?php echo url_for('/staff/index.php'); ?>">Employee Managment</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link link" href="<?php echo url_for('/staff/login.php'); ?>">User: <?php echo $_SESSION['username'] ?? ''; ?></a>
+          <a class="nav-item nav-link" href="<?php echo url_for('/staff/admins/index.php'); ?>">Admins</a>
+          <a class="nav-item nav-link" href="<?php echo url_for('/staff/departments/index.php'); ?>">Departments</a>
+          <a class="nav-item nav-link" href="<?php echo url_for('/staff/logout.php'); ?>">Logout</a>
+        </div>
+      </div>
     </nav>
     
     <?php echo display_session_message(); ?>

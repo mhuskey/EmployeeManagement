@@ -35,7 +35,6 @@
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
     <div id="main">
-      <a href="<?php echo url_for('/staff/admins/index.php'); ?>">&laquo; Back to Admins</a>
       
       <h1>Edit Admin</h1>
       
@@ -76,7 +75,7 @@
           Passwords must be at least 6 characters, and include at least one uppercase letter, lowercase letter, number, and symbol.
         </p>
         
-        <input type="submit" value="Edit Admin" />
+        <button type="submit" class="btn btn-primary">Edit Admin</button>
       </form>
     </div>
 

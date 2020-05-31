@@ -37,7 +37,6 @@
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
     <div id="main">
-      <a href="<?php echo url_for('/staff/admins/index.php'); ?>">&laquo; Back to Admins</a>
       
       <h1>Create Admin</h1>
       

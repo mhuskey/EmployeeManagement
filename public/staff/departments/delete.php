@@ -21,7 +21,6 @@
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
     <div id="main">
-      <a href="<?php echo url_for('/staff/departments/index.php'); ?>" >&laquo; Back to Employee Departments</a>
       
       <h1>Delete Department</h1>
       

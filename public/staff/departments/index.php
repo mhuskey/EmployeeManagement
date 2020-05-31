@@ -11,33 +11,36 @@
 
     <div id="main">
       <h1>Employee Departments</h1>
-      <a class="back-link" href="<?php echo url_for('/staff/index.php'); ?>">&laquo; Back to Staff Area</a><br /><br />
       
       <div class="actions">
         <a class="action" href="<?php echo url_for('/staff/departments/new.php'); ?>">Create New Department</a>
       </div>
       
-      <table class="list">
-        <tr>
-          <th>Position</th>
-          <th>Department Name</th>
-          <th>Employees</th>
-          <th>&nbsp;</th>
-          <th>&nbsp;</th>
-          <th>&nbsp;</th>
-        </tr>
-        
-        <?php while ($department = mysqli_fetch_assoc($department_set)) { ?>
-          <?php $employee_count = count_active_profiles_by_department_id($department['id']); ?>
+      <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
           <tr>
-            <td><?php echo h($department['position']); ?></td>
-            <td><?php echo h($department['department_name']); ?></td>
-            <td><?php echo $employee_count; ?></td>
-            <td><a class="action" href="<?php echo url_for('/staff/departments/show.php?id=' . h(u($department['id']))); ?>">View</a></td>
-            <td><a class="action" href="<?php echo url_for('/staff/departments/edit.php?id=' . h(u($department['id']))); ?>">Edit</a></td>
-            <td><a class="action" href="<?php echo url_for('/staff/departments/delete.php?id=' . h(u($department['id']))); ?>">Delete</a></td>
+            <th class="text-center">Position</th>
+            <th class="text-center">Department Name</th>
+            <th class="text-center">Employees</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
           </tr>
-        <?php } ?>
+        </thead>
+        
+        <tbody>
+          <?php while ($department = mysqli_fetch_assoc($department_set)) { ?>
+            <?php $employee_count = count_active_profiles_by_department_id($department['id']); ?>
+            <tr>
+              <td class="text-center"><?php echo h($department['position']); ?></td>
+              <td class="text-center"><?php echo h($department['department_name']); ?></td>
+              <td class="text-center"><?php echo $employee_count; ?></td>
+              <td class="text-center"><a class="action" href="<?php echo url_for('/staff/departments/show.php?id=' . h(u($department['id']))); ?>">View</a></td>
+              <td class="text-center"><a class="action" href="<?php echo url_for('/staff/departments/edit.php?id=' . h(u($department['id']))); ?>">Edit</a></td>
+              <td class="text-center"><a class="action" href="<?php echo url_for('/staff/departments/delete.php?id=' . h(u($department['id']))); ?>">Delete</a></td>
+            </tr>
+          <?php } ?>
+        </tbody>
       </table>
       
       <?php

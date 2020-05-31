@@ -21,7 +21,6 @@
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
     <div id="main">
-      <a class="back-link" href="<?php echo url_for('/staff/departments/show.php?id=' . h(u($profile['department_id']))); ?>">&laquo; Back to Employee Profiles</a>
       
       <h1>Delete Profile</h1>
       

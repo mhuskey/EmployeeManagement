@@ -11,34 +11,37 @@
 
     <div id="main">
       <h1>Admins</h1>
-      <a class="back-link" href="<?php echo url_for('/staff/index.php'); ?>">&laquo; Back to Staff Area</a><br /><br />
       
       <a href="<?php echo url_for('/staff/admins/new.php'); ?>">Create New Admin</a>
       
-      <table>
-        <tr>
-          <th>ID</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Username</th>
-          <th>&nbsp;</th>
-          <th>&nbsp;</th>
-          <th>&nbsp;</th>
-        </tr>
-        
-        <?php while ($admin = mysqli_fetch_assoc($admin_set)) { ?>
+      <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
           <tr>
-            <td><?php echo h($admin['id']); ?></td>
-            <td><?php echo h($admin['first_name']); ?></td>
-            <td><?php echo h($admin['last_name']); ?></td>
-            <td><?php echo h($admin['email']); ?></td>
-            <td><?php echo h($admin['username']); ?></td>
-            <td><a href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin['id']))); ?>">View</a></td>
-            <td><a href="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($admin['id']))); ?>">Edit</a></td>
-            <td><a href="<?php echo url_for('/staff/admins/delete.php?id=' . h(u($admin['id']))); ?>">Delete</a></td>
+            <th class="text-center">ID</th>
+            <th class="text-center">First Name</th>
+            <th class="text-center">Last Name</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Username</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
           </tr>
-        <?php } ?>
+        </thead>
+          
+        <tbody>
+          <?php while ($admin = mysqli_fetch_assoc($admin_set)) { ?>
+            <tr>
+              <td class="text-center"><?php echo h($admin['id']); ?></td>
+              <td class="text-center"><?php echo h($admin['first_name']); ?></td>
+              <td class="text-center"><?php echo h($admin['last_name']); ?></td>
+              <td class="text-center"><?php echo h($admin['email']); ?></td>
+              <td class="text-center"><?php echo h($admin['username']); ?></td>
+              <td class="text-center"><a href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin['id']))); ?>">View</a></td>
+              <td class="text-center"><a href="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($admin['id']))); ?>">Edit</a></td>
+              <td class="text-center"><a href="<?php echo url_for('/staff/admins/delete.php?id=' . h(u($admin['id']))); ?>">Delete</a></td>
+            </tr>
+          <?php } ?>
+        </tbody>
       </table>
       
       <?php

@@ -7,6 +7,8 @@
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
   
   <div id="main">
+    <h1>Employee Management Staff Area</h1>
+    
     <h2><a class="action" href="<?php echo url_for('/staff/admins/index.php'); ?>">Admins</a></h2>
     
     <h2><a class="action" href="<?php echo url_for('/staff/departments/index.php'); ?>">Employee Departments</a></h2>

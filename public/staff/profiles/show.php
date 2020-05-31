@@ -13,7 +13,6 @@
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
     <div id="main">
-      <a class="back-link" href="<?php echo url_for('/staff/departments/show.php?id=' . h(u($department['id']))); ?>">&laquo; Back to Employee Profiles</a>
       
       <h1>Profile: <?php echo h($profile['first_name']) . ' ' . h($profile['last_name']); ?></h1>
       

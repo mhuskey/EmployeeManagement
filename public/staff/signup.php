@@ -81,4 +81,6 @@
         
         <input type="submit" name="Sign Up" />
       </form>
+      
+      <p>Already a member? <a href="<?php echo url_for('/staff/login.php'); ?>">Log in here</a>.</p>
     </div>
