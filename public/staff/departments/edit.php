@@ -34,37 +34,48 @@
 <?php $page_title = 'Delete Department'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
-    <div id="main">
-      
-      <h1>Edit Department</h1>
-      
-      <?php echo display_errors($errors); ?>
-      
-      <form action="<?php echo url_for('staff/departments/edit.php?id=' . h(u($id))); ?>" method="post">
-        <dl>
-          <dt>Department Name</dt>
-          <dd><input type="text" name="department_name" value="<?php echo h($department['department_name']); ?>" /></dd>
-        </dl>
-        
-        <dl>
-          <dt>Position</dt>
-          <dd>
-            <select name="position">
-              <?php
-                for($i = 1; $i <= $department_count; $i++) {
-                  echo "<option value=\"{$i}\"";
-                  if($department["position"] == $i) {
-                    echo " selected";
-                  }
-                  echo ">{$i}</option>";
-                }
-              ?>
-            </select>
-          </dd>
-        </dl>
-        
-        <input type="submit" value="Edit Department" />
-      </form>
-    </div>
+    <!-- Main Content -->
+    <main role="main">
+      <section>
+        <div class="main-content">
+          <div class="container min-vh-100">
+            <div class="row">
+              <div class="col-sm-10 offset-sm-1">
+                <h1>Edit Department</h1>
+                
+                <?php echo display_errors($errors); ?>
+                
+                <form action="<?php echo url_for('staff/departments/edit.php?id=' . h(u($id))); ?>" method="post">
+                  <dl>
+                    <dt>Department Name</dt>
+                    <dd><input type="text" name="department_name" value="<?php echo h($department['department_name']); ?>" /></dd>
+                  </dl>
+                  
+                  <dl>
+                    <dt>Position</dt>
+                    <dd>
+                      <select name="position">
+                        <?php
+                          for($i = 1; $i <= $department_count; $i++) {
+                            echo "<option value=\"{$i}\"";
+                            if($department["position"] == $i) {
+                              echo " selected";
+                            }
+                            echo ">{$i}</option>";
+                          }
+                        ?>
+                      </select>
+                    </dd>
+                  </dl>
+                  
+                  <a href="<?php echo url_for('/staff/departments/index.php?id=' . h(u($department['id']))); ?>"><button type="button" class="btn btn-secondary">Cancel</button></a>
+                  <button type="submit" class="btn btn-primary">Edit Department</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
 <?php include(SHARED_PATH . '/staff_footer.php'); ?>

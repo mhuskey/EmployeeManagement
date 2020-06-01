@@ -28,6 +28,7 @@
       if($admin) {
         if(password_verify($password, $admin['hashed_password'])) {
           // password matches
+          $_SESSION['message'] = 'Login successful!';
           log_in_admin($admin);
           redirect_to(url_for('/staff/index.php'));
         } else {
@@ -46,22 +47,33 @@
 <?php $page_title = 'Log in'; ?>
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
-<div id="content">
-  <h1>Log In</h1>
-  
-  <?php echo display_errors($errors); ?>
-  
-  <form action="login.php" method="post">
-    Username:<br />
-    <input type="text" name="username" value="<?php echo h($username); ?>" autofocus /><br /><br />
-    
-    Password:<br />
-    <input type="password" name="password" value="" /><br /><br />
-    
-    <input type="submit" name="submit" value="Submit" /><br /><br />
-  </form>
-  
-  <p>Not a member? <a href="<?php echo url_for('/staff/signup.php'); ?>">Sign up here</a>.</p>
-</div>
+    <!-- Main Content -->
+    <main role="main">
+      <section>
+        <div class="main-content">
+          <div class="container min-vh-100">
+            <div class="row">
+              <div class="col-sm-10 offset-sm-1">
+                <h1>Log In</h1>
+                
+                <?php echo display_errors($errors); ?>
+                
+                <form action="login.php" method="post">
+                  Username:<br />
+                  <input type="text" name="username" value="<?php echo h($username); ?>" autofocus /><br /><br />
+                  
+                  Password:<br />
+                  <input type="password" name="password" value="" /><br /><br />
+                  
+                  <button type="submit" class="btn btn-primary">Log In</button><br /><br />
+                </form>
+                
+                <p>Not a member? <a href="<?php echo url_for('/staff/signup.php'); ?>">Sign up here</a>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
 <?php include(SHARED_PATH . '/staff_footer.php'); ?>

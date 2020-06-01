@@ -33,39 +33,49 @@
 <?php $page_title = 'Create Employee Department'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
-    <div id="main">
-      
-      <h1>Create Employee Department</h1>
-      
-      <?php echo display_errors($errors); ?>
-      
-      <form action="<?php echo url_for('/staff/departments/new.php') ?>" method="post">
-        <dl>
-          <dt>Menu Name</dt>
-          <dd><input type="text" name="department_name" value="" autofocus /></dd>
-        </dl>
-        
-        <dl>
-          <dt>Position</dt>
-          <dd>
-            <select name="position">
-              <?php
-                for ($i = 1; $i <= $department_count; $i++) { 
-                  echo "<option value=\"{$i}\"";
-                  if($department['position'] == $i) {
-                    echo " selected";
-                  }
-                  echo ">{$i}</option>";
-                }
-              ?>
-            </select>
-          </dd>
-        </dl>
-        
-        <div>
-          <input type="submit" value="Create Department">
+    <!-- Main Content -->
+    <main role="main">
+      <section>
+        <div class="main-content">
+          <div class="container min-vh-100">
+            <div class="row">
+              <div class="col-sm-10 offset-sm-1">
+                <h1>Create Employee Department</h1>
+                
+                <?php echo display_errors($errors); ?>
+                
+                <form action="<?php echo url_for('/staff/departments/new.php'); ?>" method="post">
+                  <dl>
+                    <dt>Menu Name</dt>
+                    <dd><input type="text" name="department_name" value="" autofocus /></dd>
+                  </dl>
+                  
+                  <dl>
+                    <dt>Position</dt>
+                    <dd>
+                      <select name="position">
+                        <?php
+                          for ($i = 1; $i <= $department_count; $i++) { 
+                            echo "<option value=\"{$i}\"";
+                            if($department['position'] == $i) {
+                              echo " selected";
+                            }
+                            echo ">{$i}</option>";
+                          }
+                        ?>
+                      </select>
+                    </dd>
+                  </dl>
+                  
+                  <div>
+                    <button type="submit" class="btn btn-primary">Create Department</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-      </form>
-    </div>
+      </section>
+    </main>
 
 <?php include(SHARED_PATH . '/staff_footer.php'); ?>

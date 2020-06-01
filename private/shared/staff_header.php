@@ -1,9 +1,3 @@
-<?php
-  if(!isset($page_title)) {
-    $page_title = 'Staff Area';
-  }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,5 +32,11 @@
       </div>
     </nav>
     
-    <?php echo display_session_message(); ?>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 offset-sm-1 text-center message">
+          <?php echo display_session_message(); ?>
+        </div>
+      </div>
+    </div>
     

@@ -4,11 +4,22 @@
 
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
-    <div id="main">
-      <h1>Employee Management</h1>
-      
-      <h2><a class="action" href="<?php echo url_for('/staff/login.php'); ?>">Sign In</a></h2>
-      <h2>Not a member? <a class="action" href="<?php echo url_for('/staff/signup.php'); ?>">Sign up here</a>.</h2>
-    </div>
+    <!-- Main Content -->
+    <main role="main">
+      <section>
+        <div class="main-content">
+          <div class="container min-vh-100">
+            <div class="row">
+              <div class="col-sm-10 offset-sm-1">
+                <h1>Employee Management</h1>
+                
+                <a href="<?php echo url_for('/staff/login.php'); ?>"><button type="button" class="btn btn-primary btn-large">Log In</button></a>
+                <a href="<?php echo url_for('/staff/signup.php'); ?>"><button type="button" class="btn btn-outline-secondary btn-large">Sign Up</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>
