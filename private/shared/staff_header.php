@@ -27,6 +27,7 @@
           <a class="nav-item nav-link link" href="<?php echo url_for('/staff/login.php'); ?>">User: <?php echo $_SESSION['username'] ?? ''; ?></a>
           <a class="nav-item nav-link" href="<?php echo url_for('/staff/admins/index.php'); ?>">Admins</a>
           <a class="nav-item nav-link" href="<?php echo url_for('/staff/departments/index.php'); ?>">Departments</a>
+          <a class="nav-item nav-link" href="<?php echo url_for('/staff/profiles/index.php'); ?>">Employees</a>
           <a class="nav-item nav-link" href="<?php echo url_for('/staff/logout.php'); ?>">Logout</a>
         </div>
       </div>

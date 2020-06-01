@@ -29,5 +29,7 @@ table {
 /* footer
   ------------------------- */
 footer {
-  padding-bottom: 1rem;
+  padding: 2rem 0;
+  background-color: #343A40;
+  color: #fff;
 }

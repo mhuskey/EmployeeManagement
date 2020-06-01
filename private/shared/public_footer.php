@@ -2,7 +2,7 @@
       <div class="footer">
         <div class="container">
           <div class="row">
-            <div class="col-sm-10 col-md-6 offset-sm-1 offset-md-0">
+            <div class="col-sm-10 col-md-6 offset-sm-1 offset-md-0 text-center">
               &copy; <?php echo date('Y'); ?> Matthew Huskey
             </div>
           </div>
