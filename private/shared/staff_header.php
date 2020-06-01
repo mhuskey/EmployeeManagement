@@ -25,9 +25,11 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link link" href="<?php echo url_for('/staff/login.php'); ?>">User: <?php echo $_SESSION['username'] ?? ''; ?></a>
+          <div class="dropdown-divider"></div>
           <a class="nav-item nav-link" href="<?php echo url_for('/staff/admins/index.php'); ?>">Admins</a>
           <a class="nav-item nav-link" href="<?php echo url_for('/staff/departments/index.php'); ?>">Departments</a>
           <a class="nav-item nav-link" href="<?php echo url_for('/staff/profiles/index.php'); ?>">Employees</a>
+          <div class="dropdown-divider"></div>
           <a class="nav-item nav-link" href="<?php echo url_for('/staff/logout.php'); ?>">Logout</a>
         </div>
       </div>

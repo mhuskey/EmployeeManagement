@@ -13,6 +13,14 @@ button {
   margin: 0 1rem 1rem 1rem;
 }
 
+.no-margin {
+  margin: 0;
+}
+
+.no-left-margin {
+  margin: 0 .5rem 1rem 0;
+}
+
 .message {
   font-size: 1.5rem;
   padding-top: 1.5rem;

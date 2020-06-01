@@ -50,43 +50,44 @@
                 <?php echo display_errors($errors); ?>
                 
                 <form action="<?php echo url_for('/staff/signup.php'); ?>" method="post">
-                  <dl>
-                    <dt>First Name</dt>
-                    <dd><input type="text" name="first_name" value="<?php echo h($admin['first_name']); ?>" autofocus /></dd>
-                  </dl>
+                  <div class="form-group">
+                    <label for="inputFirstName">First Name</label>
+                    <input type="text" class="form-control" name="first_name" autofocus />
+                  </div>
                   
-                  <dl>
-                    <dt>Last Name</dt>
-                    <dd><input type="text" name="last_name" value="<?php echo h($admin['last_name']); ?>" /></dd>
-                  </dl>
+                  <div class="form-group">
+                    <label for="inputLastName">Last Name</label>
+                    <input type="text" class="form-control" name="last_name" />
+                  </div>
                   
-                  <dl>
-                    <dt>Email</dt>
-                    <dd><input type="text" name="email" value="<?php echo h($admin['email']); ?>" /></dd>
-                  </dl>
+                  <div class="form-group">
+                    <label for="inputEmail">Email Address</label>
+                    <input type="email" class="form-control" name="email" />
+                  </div>
                   
-                  <dl>
-                    <dt>Username</dt>
-                    <dd><input type="text" name="username" value="<?php echo h($admin['username']); ?>" /></dd>
-                  </dl>
+                  <div class="form-group">
+                    <label for="inputUsername">Username</label>
+                    <input type="text" class="form-control" name="username" />
+                  </div>
                   
-                  <dl>
-                    <dt>Password</dt>
-                    <dd><input type="password" name="password" value="" /></dd>
-                  </dl>
+                  <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" name="password" />
+                  </div>
                   
-                  <dl>
-                    <dt>Confirm Password</dt>
-                    <dd><input type="password" name="confirm_password" value="" /></dd>
-                  </dl>
+                  <div class="form-group">
+                    <label for="inputPassword">Confirm Password</label>
+                    <input type="password" class="form-control" name="confirm_password" />
+                  </div>
                   
                   <p>
                     Passwords must be at least 6 characters, and include at least one uppercase letter, lowercase letter, number, and symbol.
                   </p>
                   <br />
                   
-                  <button type="submit" class="btn btn-primary">Sign Up</button>
+                  <button type="submit" class="btn btn-primary no-margin">Sign Up</button>
                 </form>
+                
                 <br />
                 <p>Already a member? <a href="<?php echo url_for('/staff/login.php'); ?>">Log in here</a>.</p>
               </div>

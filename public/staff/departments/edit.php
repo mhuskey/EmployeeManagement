@@ -46,29 +46,27 @@
                 <?php echo display_errors($errors); ?>
                 
                 <form action="<?php echo url_for('staff/departments/edit.php?id=' . h(u($id))); ?>" method="post">
-                  <dl>
-                    <dt>Department Name</dt>
-                    <dd><input type="text" name="department_name" value="<?php echo h($department['department_name']); ?>" /></dd>
-                  </dl>
+                  <div class="form-group">
+                    <label for="inputDepartmentName">Department Name</label>
+                    <input type="text" class="form-control" name="department_name" value="<?php echo h($department['department_name']); ?>" />
+                  </div>
                   
-                  <dl>
-                    <dt>Position</dt>
-                    <dd>
-                      <select name="position">
-                        <?php
-                          for($i = 1; $i <= $department_count; $i++) {
-                            echo "<option value=\"{$i}\"";
-                            if($department["position"] == $i) {
-                              echo " selected";
-                            }
-                            echo ">{$i}</option>";
+                  <div class="form-group">
+                    <label for="selectPosition">Position</label>
+                    <select class="custom-select" name="position">
+                      <?php
+                        for($i = 1; $i <= $department_count; $i++) {
+                          echo "<option value=\"{$i}\"";
+                          if($department["position"] == $i) {
+                            echo " selected";
                           }
-                        ?>
-                      </select>
-                    </dd>
-                  </dl>
+                          echo ">{$i}</option>";
+                        }
+                      ?>
+                    </select>
+                  </div>
                   
-                  <a href="<?php echo url_for('/staff/departments/index.php?id=' . h(u($department['id']))); ?>"><button type="button" class="btn btn-secondary">Cancel</button></a>
+                  <a href="<?php echo url_for('/staff/departments/index.php?id=' . h(u($department['id']))); ?>"><button type="button" class="btn btn-secondary no-left-margin">Cancel</button></a>
                   <button type="submit" class="btn btn-primary">Edit Department</button>
                 </form>
               </div>

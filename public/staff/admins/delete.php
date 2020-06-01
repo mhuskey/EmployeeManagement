@@ -34,7 +34,7 @@
                 <p><?php echo h($admin['first_name'] . ' ' . $admin['last_name']); ?></p>
                 
                 <form action="<?php echo url_for('/staff/admins/delete.php?id=' . h(u($admin['id']))); ?>" method="post">
-                  <a href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-secondary">Cancel</button></a>
+                  <a href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-secondary no-left-margin">Cancel</button></a>
                   <button type="submit" class="btn btn-danger" name="commit">Delete Admin</button>
                 </form>
               </div>

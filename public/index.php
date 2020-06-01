@@ -13,8 +13,8 @@
               <div class="col-sm-10 offset-sm-1">
                 <h1>Employee Management</h1>
                 
-                <a href="<?php echo url_for('/staff/login.php'); ?>"><button type="button" class="btn btn-primary btn-large">Log In</button></a>
-                <a href="<?php echo url_for('/staff/signup.php'); ?>"><button type="button" class="btn btn-outline-secondary btn-large">Sign Up</button></a>
+                <a href="<?php echo url_for('/staff/login.php'); ?>"><button type="button" class="btn btn-primary no-left-margin">Log In</button></a>
+                <a href="<?php echo url_for('/staff/signup.php'); ?>"><button type="button" class="btn btn-outline-secondary">Sign Up</button></a>
               </div>
             </div>
           </div>

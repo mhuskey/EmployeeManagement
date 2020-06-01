@@ -34,7 +34,7 @@
                 <p><?php echo h($profile['first_name'] . ' ' . $profile['last_name']); ?></p>
                 
                 <form action="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>" method="post">
-                  <a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>"><button type="button" class="btn btn-secondary">Cancel</button></a>
+                  <a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>"><button type="button" class="btn btn-secondary no-left-margin">Cancel</button></a>
                   <button type="submit" class="btn btn-danger" name="commit">Delete Profile</button>
                 </form>
               </div>

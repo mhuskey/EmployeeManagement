@@ -15,8 +15,9 @@
               <div class="col-sm-10 offset-sm-1">
                 <h1>Employee Management Staff Area</h1>
                 
-                <a href="<?php echo url_for('/staff/admins/index.php'); ?>"><button type="button" class="btn btn-info btn-large">Admins</button></a>
-                <a href="<?php echo url_for('/staff/departments/index.php'); ?>"><button type="button" class="btn btn-primary btn-large">Departments</button></a>
+                <a href="<?php echo url_for('/staff/admins/index.php'); ?>"><button type="button" class="btn btn-outline-info no-left-margin">Admins</button></a>
+                <a href="<?php echo url_for('/staff/departments/index.php'); ?>"><button type="button" class="btn btn-outline-primary">Departments</button></a>
+                <a href="<?php echo url_for('/staff/profiles/index.php'); ?>"><button type="button" class="btn btn-outline-success">Profiles</button></a>
               </div>
             </div>
           </div>

@@ -46,41 +46,41 @@
                 <?php echo display_errors($errors); ?>
                 
                 <form action="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($id))); ?>" method="post">
-                  <dl>
-                    <dt>First Name</dt>
-                    <dd><input type="text" name="first_name" value="<?php echo h($admin['first_name']); ?>" /></dd>
-                  </dl>
+                  <div class="form-group">
+                    <label for="inputFirstName">First Name</label>
+                    <input type="text" class="form-control" name="first_name" value="<?php echo h($admin['first_name']); ?>" />
+                  </div>
+                    
+                  <div class="form-group">
+                    <label for="inputLastName">Last Name</label>
+                    <input type="text" class="form-control" name="last_name" value="<?php echo h($admin['last_name']); ?>" />
+                  </div>
                   
-                  <dl>
-                    <dt>Last Name</dt>
-                    <dd><input type="text" name="last_name" value="<?php echo h($admin['last_name']); ?>" /></dd>
-                  </dl>
+                  <div class="form-group">
+                    <label for="inputEmail">Email Address</label>
+                    <input type="email" class="form-control" name="email" value="<?php echo h($admin['email']); ?>" />
+                  </div>
                   
-                  <dl>
-                    <dt>Email Address</dt>
-                    <dd><input type="text" name="email" value="<?php echo h($admin['email']); ?>" /></dd>
-                  </dl>
+                  <div class="form-group">
+                    <label for="inputUsername">Username</label>
+                    <input type="text" class="form-control" name="username" value="<?php echo h($admin['username']); ?>" />
+                  </div>
                   
-                  <dl>
-                    <dt>Username</dt>
-                    <dd><input type="text" name="username" value="<?php echo h($admin['username']); ?>" /></dd>
-                  </dl>
+                  <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" name="password" />
+                  </div>
                   
-                  <dl>
-                    <dt>Password</dt>
-                    <dd><input type="password" name="password" /></dd>
-                  </dl>
-                  
-                  <dl>
-                    <dt>Confirm Password</dt>
-                    <dd><input type="password" name="confirm_password" /></dd>
-                  </dl>
+                  <div class="form-group">
+                    <label for="inputPassword">Confirm Password</label>
+                    <input type="password" class="form-control" name="confirm_password" />
+                  </div>
                   
                   <p>
                     Passwords must be at least 6 characters, and include at least one uppercase letter, lowercase letter, number, and symbol.
                   </p>
                   
-                  <a href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-secondary">Cancel</button></a>
+                  <a href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-secondary no-left-margin">Cancel</button></a>
                   <button type="submit" class="btn btn-primary">Edit Admin</button>
                 </form>
               </div>

@@ -25,9 +25,9 @@
                 <table class="table table-striped table-bordered table-hover">
                   <thead class="thead-dark">
                     <tr>
-                      <th class="text-center">Position</th>
-                      <th class="text-center">Department Name</th>
-                      <th class="text-center">Employees</th>
+                      <th class="text-center align-middle">Position</th>
+                      <th class="text-center align-middle">Department Name</th>
+                      <th class="text-center align-middle">Employees</th>
                       <th>&nbsp;</th>
                       <th>&nbsp;</th>
                       <th>&nbsp;</th>

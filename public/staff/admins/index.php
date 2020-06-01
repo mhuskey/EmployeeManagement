@@ -23,11 +23,11 @@
                 <table class="table table-striped table-bordered table-hover">
                   <thead class="thead-dark">
                     <tr>
-                      <th class="text-center">ID</th>
-                      <th class="text-center">First Name</th>
-                      <th class="text-center">Last Name</th>
-                      <th class="text-center">Email</th>
-                      <th class="text-center">Username</th>
+                      <th class="text-center align-middle">ID</th>
+                      <th class="text-center align-middle">First Name</th>
+                      <th class="text-center align-middle">Last Name</th>
+                      <th class="text-center align-middle">Email</th>
+                      <th class="text-center align-middle">Username</th>
                       <th>&nbsp;</th>
                       <th>&nbsp;</th>
                       <th>&nbsp;</th>

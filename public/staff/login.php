@@ -59,13 +59,17 @@
                 <?php echo display_errors($errors); ?>
                 
                 <form action="login.php" method="post">
-                  Username:<br />
-                  <input type="text" name="username" value="<?php echo h($username); ?>" autofocus /><br /><br />
+                  <div class="form-group">
+                    <label for="loginInputUsername">Username</label>
+                    <input type="text" class="form-control" name="username" autofocus />
+                  </div>
                   
-                  Password:<br />
-                  <input type="password" name="password" value="" /><br /><br />
+                  <div class="form-group">
+                    <label for="loginInputPassword">Password</label>
+                    <input type="password" class="form-control" name="password" />
+                  </div>
                   
-                  <button type="submit" class="btn btn-primary">Log In</button><br /><br />
+                  <button type="submit" class="btn btn-primary no-margin">Log In</button><br /><br />
                 </form>
                 
                 <p>Not a member? <a href="<?php echo url_for('/staff/signup.php'); ?>">Sign up here</a>.</p>
