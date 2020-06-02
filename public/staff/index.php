@@ -13,11 +13,39 @@
           <div class="container min-vh-100">
             <div class="row">
               <div class="col-sm-10 offset-sm-1">
-                <h1>Employee Management Staff Area</h1>
+                <h1 class="text-center">Employee Management Staff Area</h1>
                 
-                <a href="<?php echo url_for('/staff/admins/index.php'); ?>"><button type="button" class="btn btn-outline-info no-left-margin">Admins</button></a>
-                <a href="<?php echo url_for('/staff/departments/index.php'); ?>"><button type="button" class="btn btn-outline-primary">Departments</button></a>
-                <a href="<?php echo url_for('/staff/profiles/index.php'); ?>"><button type="button" class="btn btn-outline-success">Profiles</button></a>
+                <div class="row">
+                  <div class="col-sm-10 offset-sm-1">
+                    <div class="card border-info mb-3">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">Admins</h5>
+                        <p class="card-text">View and edit Employee Management admins.</p>
+                        <a href="<?php echo url_for('/staff/admins/index.php'); ?>" class="btn btn-info">Admins</a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="col-sm-10 offset-sm-1">
+                    <div class="card border-primary mb-3">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">Departments</h5>
+                        <p class="card-text">View and edit Employee Management departments, as well as the employees that comprise them.</p>
+                        <a href="<?php echo url_for('/staff/departments/index.php'); ?>" class="btn btn-primary">Departments</a>
+                      </div>
+                    </div>
+                  </div>
+                                  
+                  <div class="col-sm-10 offset-sm-1">
+                    <div class="card border-success mb-3">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">Profiles</h5>
+                        <p class="card-text">View and edit all Employee Management profiles.</p>
+                        <a href="<?php echo url_for('/staff/profiles/index.php'); ?>" class="btn btn-success">Profiles</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

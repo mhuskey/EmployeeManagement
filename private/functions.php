@@ -61,7 +61,7 @@
   function display_session_message() {
     $msg = get_and_clear_session_message();
     if(!is_blank($msg)) {
-      return '<div id="message">' . h($msg) . '</div>';
+      return '<div class="alert alert-success" id="message" role="alert">' . h($msg) . '</div>';
     }
   }
 ?>

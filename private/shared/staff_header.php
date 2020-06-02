@@ -28,7 +28,7 @@
           <div class="dropdown-divider"></div>
           <a class="nav-item nav-link" href="<?php echo url_for('/staff/admins/index.php'); ?>">Admins</a>
           <a class="nav-item nav-link" href="<?php echo url_for('/staff/departments/index.php'); ?>">Departments</a>
-          <a class="nav-item nav-link" href="<?php echo url_for('/staff/profiles/index.php'); ?>">Employees</a>
+          <a class="nav-item nav-link" href="<?php echo url_for('/staff/profiles/index.php'); ?>">Profiles</a>
           <div class="dropdown-divider"></div>
           <a class="nav-item nav-link" href="<?php echo url_for('/staff/logout.php'); ?>">Logout</a>
         </div>

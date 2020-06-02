@@ -17,7 +17,7 @@
     if($result === true) {
       $admin['id'] = mysqli_insert_id($db);
       log_in_admin($admin);
-      $_SESSION['message'] = 'Sign up successful.';
+      $_SESSION['message'] = 'Sign up successful!';
       redirect_to(url_for('/staff/index.php'));
     } else {
       $errors = $result;

@@ -15,18 +15,18 @@
         <div class="main-content">
           <div class="container min-vh-100">
             <div class="row">
-              <div class="col-sm-10 offset-sm-1">
+              <div class="col-sm-10 offset-sm-1 text-center">
                 <h1>Employee Departments</h1>
                 
-                <div class="actions">
-                  <a class="action" href="<?php echo url_for('/staff/departments/new.php'); ?>">Create New Department</a>
+                <div>
+                  <a href="<?php echo url_for('/staff/departments/new.php'); ?>"><button type="button" class="btn btn-primary no-margin">Create Department</button></a>
                 </div>
                 
                 <table class="table table-striped table-bordered table-hover">
                   <thead class="thead-dark">
                     <tr>
-                      <th class="text-center align-middle">Position</th>
-                      <th class="text-center align-middle">Department Name</th>
+                      <th class="align-middle">Position</th>
+                      <th class="align-middle">Department Name</th>
                       <th class="text-center align-middle">Employees</th>
                       <th>&nbsp;</th>
                       <th>&nbsp;</th>

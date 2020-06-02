@@ -16,7 +16,7 @@
           <div class="container min-vh-100">
             <div class="row">
               <div class="col-sm-10 offset-sm-1">
-                <h1>Employee Profiles</h1>
+                <h1 class="text-center">Employee Profiles</h1>
                 
                 <table class="table table-striped table-bordered table-hover">
                   <thead class="thead-dark">

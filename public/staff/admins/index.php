@@ -15,10 +15,10 @@
         <div class="main-content">
           <div class="container min-vh-100">
             <div class="row">
-              <div class="col-sm-10 offset-sm-1">
+              <div class="col-sm-10 offset-sm-1 text-center">
                 <h1>Admins</h1>
                 
-                <a href="<?php echo url_for('/staff/admins/new.php'); ?>">Create New Admin</a>
+                <a href="<?php echo url_for('/staff/admins/new.php'); ?>"><button type="button" class="btn btn-primary no-margin">Create Admin</button></a>
                 
                 <table class="table table-striped table-bordered table-hover">
                   <thead class="thead-dark">
