@@ -19,28 +19,35 @@
         <div class="main-content">
           <div class="container min-vh-100">
             <div class="row">
-              <div class="col-sm-10 offset-sm-1">
+              <div class="col-sm-10 offset-sm-1 text-center">
                 <h1>Department: <?php echo h($department['department_name']); ?></h1>
                 
+                <!-- Department Card -->
+                <div class="col-sm-10 offset-sm-1">
+                  <div class="card border-dark mb-3 text-center">
+                    <h5 class="card-header">Department Name</h5>
+                    <div class="card-body">
+                      <h5 class="card-text"><?php echo h($department['department_name']); ?></h5>
+                    </div>
+                    
+                    <h5 class="card-header">Position</h5>
+                    <div class="card-body">
+                      <h5 class="card-text"><?php echo h($department['position']); ?></h5>
+                    </div>
+                  </div>
+                </div>
+                <br />
+                <!-- Delete & Edit Buttons -->
                 <a href="<?php echo url_for('/staff/departments/delete.php?id=' . h(u($department['id']))); ?>"><button type="button" class="btn btn-outline-danger">Delete</button></a>
                 <a href="<?php echo url_for('/staff/departments/edit.php?id=' . h(u($department['id']))); ?>"><button type="button" class="btn btn-outline-primary">Edit</button></a>
-                
-                <dl>
-                  <dt>Department Name</dt>
-                  <dd><?php echo h($department['department_name']); ?></dd>
-                </dl>
-                
-                <dl>
-                  <dt>Position</dt>
-                  <dd><?php echo h($department['position']); ?></dd>
-                </dl>
                     
                 <hr />
                 
-                <div>
+                <!-- Active Employees Table -->
+                <div class="text-center">
                   <h2>Profiles</h2>
                   
-                  <a href="<?php echo url_for('/staff/profiles/new.php?department_id=' . h(u($department['id']))); ?>">Create New Employee Profile</a><br /><br />
+                  <a href="<?php echo url_for('/staff/profiles/new.php?department_id=' . h(u($department['id']))); ?>"><button type="button" class="btn btn-primary no-margin">Create Department</button></a><br /><br />
                   
                   <h3>Active Employees</h3>
                   
@@ -70,6 +77,7 @@
                     </tbody>
                   </table>
                   
+                  <!-- Inactive Employees Table -->
                   <?php if($inactive_profile_set) { ?>
                     <h3>Inactive Employees</h3>
                     
