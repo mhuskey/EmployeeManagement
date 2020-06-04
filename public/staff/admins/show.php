@@ -17,31 +17,37 @@
         <div class="main-content">
           <div class="container min-vh-100">
             <div class="row">
-              <div class="col-sm-10 offset-sm-1">
+              <div class="col-sm-10 offset-sm-1 text-center">
                 <h1>Admin: <?php echo h($admin['username']); ?></h1>
+                
+                <!-- Admin Card -->
+                <div class="col-sm-10 offset-sm-1">
+                  <div class="card border-dark mb-3 text-center">
+                    <h5 class="card-header">First Name</h5>
+                    <div class="card-body">
+                      <h5 class="card-text"><?php echo h($admin['first_name']); ?></h5>
+                    </div>
+                    
+                    <h5 class="card-header">Last Name</h5>
+                    <div class="card-body">
+                      <h5 class="card-text"><?php echo h($admin['last_name']); ?></h5>
+                    </div>
+                    
+                    <h5 class="card-header">Email Address</h5>
+                    <div class="card-body">
+                      <h5 class="card-text"><?php echo h($admin['email']); ?></h5>
+                    </div>
+                    
+                    <h5 class="card-header">Username</h5>
+                    <div class="card-body">
+                      <h5 class="card-text"><?php echo h($admin['username']); ?></h5>
+                    </div>
+                  </div>
+                </div>
+                <br />
                 
                 <a href="<?php echo url_for('/staff/admins/delete.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-outline-danger">Delete</button></a>
                 <a href="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-outline-primary">Edit</button></a>
-                
-                <dl>
-                  <dt>First Name</dt>
-                  <dd><?php echo h($admin['first_name']); ?></dd>
-                </dl>
-                
-                <dl>
-                  <dt>Lase Name</dt>
-                  <dd><?php echo h($admin['last_name']); ?></dd>
-                </dl>
-                
-                <dl>
-                  <dt>Email Address</dt>
-                  <dd><?php echo h($admin['email']); ?></dd>
-                </dl>
-                
-                <dl>
-                  <dt>Username</dt>
-                  <dd><?php echo h($admin['username']); ?></dd>
-                </dl>
               </div>
             </div>
           </div>

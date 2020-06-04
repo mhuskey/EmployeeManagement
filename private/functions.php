@@ -36,9 +36,9 @@
     $output = '';
     
     if(!empty($errors)) {
-      $output .= "<div class=\"errors\">";
-      $output .= "Please fix the following errors:";
-      $output .= "<ul>";
+      $output .= '<div class="alert alert-danger" id="message" role="alert">';
+      $output .= '<h5 class="alert-heading">Please fix the following errors:</h5>';
+      $output .= '<ul>';
       
       foreach ($errors as $error) {
         $output .= "<li>" . h($error) . "</li>";
@@ -61,7 +61,12 @@
   function display_session_message() {
     $msg = get_and_clear_session_message();
     if(!is_blank($msg)) {
-      return '<div class="alert alert-success" id="message" role="alert">' . h($msg) . '</div>';
+      return '<div class="alert alert-success alert-dismissible fade show" id="message" role="alert">' . h($msg) .
+        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>' . 
+      '</div>'
+          ;
     }
   }
 ?>
