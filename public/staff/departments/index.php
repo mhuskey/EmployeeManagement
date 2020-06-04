@@ -41,9 +41,9 @@
                         <td class="text-center"><?php echo h($department['position']); ?></td>
                         <td class="text-center"><?php echo h($department['department_name']); ?></td>
                         <td class="text-center"><?php echo $employee_count; ?></td>
-                        <td class="text-center"><a class="action" href="<?php echo url_for('/staff/departments/show.php?id=' . h(u($department['id']))); ?>">View</a></td>
-                        <td class="text-center"><a class="action" href="<?php echo url_for('/staff/departments/edit.php?id=' . h(u($department['id']))); ?>">Edit</a></td>
-                        <td class="text-center"><a class="action" href="<?php echo url_for('/staff/departments/delete.php?id=' . h(u($department['id']))); ?>">Delete</a></td>
+                        <td class="text-center"><a class="action" href="<?php echo url_for('/staff/departments/show.php?id=' . h(u($department['id']))); ?>"><button type="button" class="btn btn-info no-margin">View</button></a></td>
+                        <td class="text-center"><a class="action" href="<?php echo url_for('/staff/departments/edit.php?id=' . h(u($department['id']))); ?>"><button type="button" class="btn btn-primary no-margin">Edit</button></a></td>
+                        <td class="text-center"><a class="action" href="<?php echo url_for('/staff/departments/delete.php?id=' . h(u($department['id']))); ?>"><button type="button" class="btn btn-danger no-margin">Delete</button></a></td>
                       </tr>
                     <?php } ?>
                   </tbody>

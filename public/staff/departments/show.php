@@ -69,9 +69,9 @@
                           <td class="text-center"><?php echo h($profile['id']); ?></td>
                           <td class="text-center"><?php echo h($profile['first_name']); ?></td>
                           <td class="text-center"><?php echo h($profile['last_name']); ?></td>
-                          <td class="text-center"><a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>">View</a></td>
-                          <td class="text-center"><a href="<?php echo url_for('/staff/profiles/edit.php?id=' . h(u($profile['id']))); ?>">Edit</a></td>
-                          <td class="text-center"><a href="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>">Delete</a></td>
+                          <td class="text-center"><a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>"><button type="button" class="btn btn-info no-margin">View</button></a></td>
+                          <td class="text-center"><a href="<?php echo url_for('/staff/profiles/edit.php?id=' . h(u($profile['id']))); ?>"><button type="button" class="btn btn-primary no-margin">Edit</button></a></td>
+                          <td class="text-center"><a href="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>"><button type="button" class="btn btn-danger no-margin">Delete</button></a></td>
                         </tr>
                       <?php } ?>
                     </tbody>
@@ -99,9 +99,9 @@
                             <td class="text-center"><?php echo h($profile['id']); ?></td>
                             <td class="text-center"><?php echo h($profile['first_name']); ?></td>
                             <td class="text-center"><?php echo h($profile['last_name']); ?></td>
-                            <td class="text-center"><a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>">View</a></td>
-                            <td class="text-center"><a href="<?php echo url_for('/staff/profiles/edit.php?id=' . h(u($profile['id']))); ?>">Edit</a></td>
-                            <td class="text-center"><a href="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>">Delete</a></td>
+                            <td class="text-center"><a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>"><button type="button" class="btn btn-info no-margin">View</button></a></td>
+                            <td class="text-center"><a href="<?php echo url_for('/staff/profiles/edit.php?id=' . h(u($profile['id']))); ?>"><button type="button" class="btn btn-primary no-margin">Edit</button></a></td>
+                            <td class="text-center"><a href="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>"><button type="button" class="btn btn-danger no-margin">Delete</button></a></td>
                           </tr>
                         <?php } ?>
                       </tbody>
