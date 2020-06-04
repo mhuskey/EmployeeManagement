@@ -26,12 +26,20 @@
         <div class="main-content">
           <div class="container min-vh-100">
             <div class="row">
-              <div class="col-sm-10 offset-sm-1">
+              <div class="col-sm-10 offset-sm-1 text-center">
                 <h1>Delete Profile</h1>
                 
                 <p>Are you sure you want to delete this profile?</p>
                 
-                <p><?php echo h($profile['first_name'] . ' ' . $profile['last_name']); ?></p>
+                <!-- Profile Card -->
+                <div class="col-sm-10 offset-sm-1">
+                  <div class="card border-dark mb-3">
+                    <h5 class="card-header">Profile</h5>
+                    <div class="card-body">
+                      <h5 class="card-text"><?php echo h($profile['first_name'] . ' ' . $profile['last_name']); ?></h5>
+                    </div>
+                  </div>
+                </div>
                 
                 <form action="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>" method="post">
                   <a href="<?php echo url_for('/staff/profiles/show.php?id=' . h(u($profile['id']))); ?>"><button type="button" class="btn btn-secondary no-left-margin">Cancel</button></a>

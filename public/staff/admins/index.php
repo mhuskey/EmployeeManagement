@@ -37,14 +37,14 @@
                   <tbody>
                     <?php while ($admin = mysqli_fetch_assoc($admin_set)) { ?>
                       <tr>
-                        <td class="text-center"><?php echo h($admin['id']); ?></td>
-                        <td class="text-center"><?php echo h($admin['first_name']); ?></td>
-                        <td class="text-center"><?php echo h($admin['last_name']); ?></td>
-                        <td class="text-center"><?php echo h($admin['email']); ?></td>
-                        <td class="text-center"><?php echo h($admin['username']); ?></td>
-                        <td class="text-center"><a href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin['id']))); ?>">View</a></td>
-                        <td class="text-center"><a href="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($admin['id']))); ?>">Edit</a></td>
-                        <td class="text-center"><a href="<?php echo url_for('/staff/admins/delete.php?id=' . h(u($admin['id']))); ?>">Delete</a></td>
+                        <td class="text-center align-middle"><?php echo h($admin['id']); ?></td>
+                        <td class="text-center align-middle"><?php echo h($admin['first_name']); ?></td>
+                        <td class="text-center align-middle"><?php echo h($admin['last_name']); ?></td>
+                        <td class="text-center align-middle"><?php echo h($admin['email']); ?></td>
+                        <td class="text-center align-middle"><?php echo h($admin['username']); ?></td>
+                        <td class="text-center"><a href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-info no-margin">View</button></a></td>
+                        <td class="text-center"><a href="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-primary no-margin">Edit</button></a></td>
+                        <td class="text-center"><a href="<?php echo url_for('/staff/admins/delete.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-danger no-margin">Delete</button></a></td>
                       </tr>
                     <?php } ?>
                   </tbody>

@@ -26,12 +26,20 @@
         <div class="main-content">
           <div class="container min-vh-100">
             <div class="row">
-              <div class="col-sm-10 offset-sm-1">
+              <div class="col-sm-10 offset-sm-1 text-center">
                 <h1>Delete Admin</h1>
                 
                 <p>Are you sure you want to delete this admin?</p>
                 
-                <p><?php echo h($admin['first_name'] . ' ' . $admin['last_name']); ?></p>
+                <!-- Admin Card -->
+                <div class="col-sm-10 offset-sm-1">
+                  <div class="card border-dark mb-3 text-center">
+                    <h5 class="card-header">Admin Username</h5>
+                    <div class="card-body">
+                      <h5 class="card-text"><?php echo h($admin['username']); ?></h5>
+                    </div>
+                  </div>
+                </div>
                 
                 <form action="<?php echo url_for('/staff/admins/delete.php?id=' . h(u($admin['id']))); ?>" method="post">
                   <a href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-secondary no-left-margin">Cancel</button></a>

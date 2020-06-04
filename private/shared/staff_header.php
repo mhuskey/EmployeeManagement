@@ -24,7 +24,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link link" href="<?php echo url_for('/staff/login.php'); ?>">User: <?php echo $_SESSION['username'] ?? ''; ?></a>
+          <a class="nav-item nav-link link" href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($_SESSION['admin_id']))); ?>">User: <?php echo $_SESSION['username'] ?? ''; ?></a>
           <div class="dropdown-divider"></div>
           <a class="nav-item nav-link" href="<?php echo url_for('/staff/departments/index.php'); ?>">Departments</a>
           <a class="nav-item nav-link" href="<?php echo url_for('/staff/profiles/index.php'); ?>">Profiles</a>
