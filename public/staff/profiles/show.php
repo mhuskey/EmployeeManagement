@@ -65,8 +65,8 @@
                 <br />
                 
                 <!-- Delete & Edit Buttons -->
-                <a href="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>"><button type="button" class="btn btn-outline-danger">Delete</button></a>
-                <a href="<?php echo url_for('/staff/profiles/edit.php?id=' . h(u($profile['id']))); ?>"><button type="button" class="btn btn-outline-primary">Edit</button></a>
+                <a href="<?php echo url_for('/staff/profiles/delete.php?id=' . h(u($profile['id']))); ?>"><button type="button" class="btn btn-danger">Delete</button></a>
+                <a href="<?php echo url_for('/staff/profiles/edit.php?id=' . h(u($profile['id']))); ?>"><button type="button" class="btn btn-primary">Edit</button></a>
                 <br /><br />
               </div>
             </div>
