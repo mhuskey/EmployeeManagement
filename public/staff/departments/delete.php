@@ -26,12 +26,20 @@
         <div class="main-content">
           <div class="container min-vh-100">
             <div class="row">
-              <div class="col-sm-10 offset-sm-1">
+              <div class="col-sm-10 offset-sm-1 text-center">
                 <h1>Delete Department</h1>
                 
                 <p>Are you sure you want to delete this department?</p>
                 
-                <p><?php echo h($department['department_name']); ?></p>
+                <!-- Department Card -->
+                <div class="col-sm-10 offset-sm-1">
+                  <div class="card border-dark mb-3">
+                    <h5 class="card-header">Department Name</h5>
+                    <div class="card-body">
+                      <h5 class="card-text"><?php echo h($department['department_name']); ?></h5>
+                    </div>
+                  </div>
+                </div>
                 
                 <form action="<?php echo url_for('/staff/departments/delete.php?id=' . h(u($department['id']))); ?>" method="post">
                   <a href="<?php echo url_for('/staff/departments/index.php?id=' . h(u($department['id']))); ?>"><button type="button" class="btn btn-secondary no-left-margin">Cancel</button></a>
