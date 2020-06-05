@@ -46,8 +46,8 @@
                 </div>
                 <br />
                 
-                <a href="<?php echo url_for('/staff/admins/delete.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-outline-danger">Delete</button></a>
-                <a href="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-outline-primary">Edit</button></a>
+                <a href="<?php echo url_for('/staff/admins/delete.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-danger">Delete</button></a>
+                <a href="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($admin['id']))); ?>"><button type="button" class="btn btn-primary">Edit</button></a>
               </div>
             </div>
           </div>

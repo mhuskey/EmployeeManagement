@@ -20,7 +20,12 @@
     
     $result = update_admin($admin);
     if($result) {
-      $_SESSION['message'] = 'The admin was updated succesfully.';
+      // Check if user is editing their own admin
+      if($_SESSION['admin_id'] === $admin['id']) {
+        // If so, update `$_SESSION['username']`
+        $_SESSION['username'] = $admin['username'];
+      }
+      $_SESSION['message']  = 'The admin was updated succesfully.';
       redirect_to(url_for('/staff/admins/show.php?id=' . $id));
     } else {
       $errors = $result;
