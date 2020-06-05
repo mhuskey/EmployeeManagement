@@ -36,8 +36,30 @@ table {
 
 /* footer
   ------------------------- */
-footer {
+footer, footer a {
   padding: 2rem 0;
   background-color: #343A40;
-  color: #fff;
+  color: #ffffff;
+}
+
+#copyright {
+  margin-bottom: 2rem;
+}
+
+li {
+  display: inline;
+  margin-right: 2rem;
+  font-size: 2.5rem;
+}
+
+#github a:focus, #github a:hover, #github a:before {
+  color: #800080;
+}
+
+#mail a:focus, #mail a:hover, #mail a:before {
+  color: #4077B5;
+}
+
+#linkedin a:focus, #linkedin a:hover, #linkedin a:before {
+  color: #0077B5;
 }

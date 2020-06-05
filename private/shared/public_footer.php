@@ -2,8 +2,14 @@
       <div class="footer">
         <div class="container">
           <div class="row">
-            <div class="col-sm-10 col-md-6 offset-sm-1 offset-md-0 text-center">
-              &copy; <?php echo date('Y'); ?> Matthew Huskey
+            <div class="col-sm-10 offset-sm-1 text-center">
+              <p id="copyright">&copy; <?php echo date('Y'); ?> Matthew Huskey</p>
+              
+              <ul class="text-center">
+                <li id="github"><a href="https://github.com/mhuskey" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li id="mail"><a href="mailto:matthewhuskey@me.com"><i class="fas fa-envelope"></i></a></li>
+                <li id="linkedin"><a href="https://www.linkedin.com/in/matthew-huskey-17258716b" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
             </div>
           </div>
         </div>

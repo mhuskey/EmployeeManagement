@@ -47,7 +47,7 @@
                 <div>
                   <h2>Profiles</h2>
                   
-                  <a href="<?php echo url_for('/staff/profiles/new.php?department_id=' . h(u($department['id']))); ?>"><button type="button" class="btn btn-primary no-margin">Create Profile</button></a><br /><br />
+                  <a href="<?php echo url_for('/staff/profiles/new.php?department_id=' . h(u($department['id']))); ?>"><button type="button" class="btn btn-primary no-margin">Create Profile</button></a><br /><br /><br />
                   
                   <h3>Active Employees</h3>
                   
