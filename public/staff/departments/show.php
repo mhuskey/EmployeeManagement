@@ -77,6 +77,10 @@
                     </tbody>
                   </table>
                   
+                  <br />
+                  <hr>
+                  <br />
+                  
                   <!-- Inactive Employees Table -->
                   <?php if($inactive_profile_set) { ?>
                     <h3>Inactive Employees</h3>
