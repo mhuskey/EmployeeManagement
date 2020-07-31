@@ -78,7 +78,7 @@
                   </table>
                   
                   <br />
-                  <hr>
+                  <hr />
                   <br />
                   
                   <!-- Inactive Employees Table -->
