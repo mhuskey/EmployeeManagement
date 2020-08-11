@@ -2,6 +2,8 @@
 
 EmployeeManagement is a responsive PHP web application using MySQL. It allows for the managment of employees, by creating employee departments and assigning employee profiles to them.
 
+Credentials are stored in `private/db_credentials.php`. To customize the application's credentials, the developer only needs to update this file.
+
 ---
 
 ## Features
