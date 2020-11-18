@@ -1,5 +1,5 @@
 <?php
-  // is_blank('abcd')
+  // is_blank('abc')
   // * validate data presence
   // * uses trim() so empty spaces don't count
   // * uses === to avoid false positives
@@ -8,7 +8,7 @@
     return !isset($value) || trim($value) === '';
   }
   
-  // has_presence('abcd')
+  // has_presence('abc')
   // * validate data presence
   // * reverse of is_blank()
   // * I prefer validation names with "has_"
@@ -16,7 +16,7 @@
     return !is_blank($value);
   }
   
-  // has_length_greater_than('abcd', 3)
+  // has_length_greater_than('abc', 2)
   // * validate string length
   // * spaces count towards length
   // * use trim() if spaces should not count
@@ -25,7 +25,7 @@
     return $length > $min;
   }
   
-  // has_length_less_than('abcd', 5)
+  // has_length_less_than('abc', 4)
   // * validate string length
   // * spaces count towards length
   // * use trim() if spaces should not count
@@ -34,7 +34,7 @@
     return $length < $max;
   }
   
-  // has_length_exactly('abcd', 4)
+  // has_length_exactly('abc', 3)
   // * validate string length
   // * spaces count towards length
   // * use trim() if spaces should not count
@@ -43,7 +43,7 @@
     return $length == $exact;
   }
   
-  // has_length('abcd', ['min' => 3, 'max' => 5])
+  // has_length('abc', ['min' => 2, 'max' => 4])
   // * validate string length
   // * combines functions _greater_than, _less_than, _exactly
   // * spaces count towards length
@@ -72,7 +72,7 @@
     return !in_array($value, $set);
   }
   
-  // has_string('nobody@nowhere.com', '.com')
+  // has_string('foo@bar.com', '.com')
   // * validate inclusion of character(s)
   // * strpos returns string start position or false
   // * uses !== to prevent position 0 from being considered false
@@ -81,22 +81,21 @@
     return strpos($value, $required_string) !== false;
   }
   
-  // has_valid_email_format('nobody@nowhere.com')
+  // has_valid_email_format('foo@bar.com')
   // * validate correct format for email addresses
   // * format: [chars]@[chars].[2+ letters]
   // * preg_match is helpful, uses a regular expression
   //    returns 1 for a match, 0 for no match
-  //    http://php.net/manual/en/function.preg-match.php
   function has_valid_email_format($value) {
     $email_regex = '/\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\Z/i';
     return preg_match($email_regex, $value) === 1;
   }
   
-  // has_unique_username('johnqpublic')
+  // has_unique_username('foobar')
   // * Validates uniqueness of admins.username
   // * For new records, provide only the username.
   // * For existing records, provide current ID as second argument
-  //   has_unique_username('johnqpublic', 4)
+  //   has_unique_username('foobar', 2)
   function has_unique_username($username, $current_id="0") {
     global $db;
     

@@ -234,7 +234,7 @@
     // department_name
     if(is_blank($department['department_name'])) {
       $errors[] = "Department Name cannot be blank.";
-    } elseif (!has_length($department['department_name'], ['min' => 2, 'max' => 255])) {
+    } elseif(!has_length($department['department_name'], ['min' => 2, 'max' => 255])) {
       $errors[] = "Department Name must be between 2 and 255 charcters.";
     }
     

@@ -44,9 +44,9 @@
                           <?php
                             if($profile['status'] == 1) {
                               echo 'Active';
-                            } elseif ($profile['status'] == 2) {
+                            } elseif($profile['status'] == 2) {
                               echo 'Resigned';
-                            } elseif ($profile['status'] == 3) {
+                            } elseif($profile['status'] == 3) {
                               echo 'Terminated';
                             } else {
                               echo 'Leave of Absence';
