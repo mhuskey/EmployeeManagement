@@ -21,9 +21,9 @@ button {
   margin: 0 .5rem 1rem 0;
 }
 
-.message {
+#message {
   font-size: 1.5rem;
-  padding-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 
@@ -42,14 +42,14 @@ footer, footer a {
   color: #ffffff;
 }
 
-#copyright {
-  margin-bottom: 2rem;
-}
-
-li {
+.footer-list {
   display: inline;
   margin-right: 2rem;
   font-size: 2.5rem;
+}
+
+#copyright {
+  margin-bottom: 2rem;
 }
 
 #github a:focus, #github a:hover, #github a:before {
