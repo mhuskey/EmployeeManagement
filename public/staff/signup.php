@@ -12,7 +12,7 @@
     
     // Log out in case alreay logged in
     log_out_admin();
-  
+    
     $result = insert_admin($admin);
     if($result === true) {
       $admin['id'] = mysqli_insert_id($db);

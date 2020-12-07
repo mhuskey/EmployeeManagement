@@ -62,11 +62,7 @@
     $msg = get_and_clear_session_message();
     if(!is_blank($msg)) {
       return '<div class="alert alert-success alert-dismissible fade show" id="message" role="alert">' . h($msg) .
-        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>' . 
-      '</div>'
-          ;
+        '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
     }
   }
 ?>

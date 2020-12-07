@@ -11,10 +11,12 @@
           <div class="container min-vh-100">
             <div class="row">
               <div class="col-sm-10 offset-sm-1">
-                <h1>Employee Management</h1>
+                <h1 class="text-center">Employee Management</h1>
                 
-                <a href="<?php echo url_for('/staff/login.php'); ?>"><button type="button" class="btn btn-primary no-left-margin">Log In</button></a>
-                <a href="<?php echo url_for('/staff/signup.php'); ?>"><button type="button" class="btn btn-outline-secondary">Sign Up</button></a>
+                <p class="text-center">
+                  <a href="<?php echo url_for('/staff/login.php'); ?>"><button type="button" class="btn btn-primary no-left-margin">Log In</button></a>
+                  <a href="<?php echo url_for('/staff/signup.php'); ?>"><button type="button" class="btn btn-outline-secondary">Sign Up</button></a>
+                </p>
               </div>
             </div>
           </div>
